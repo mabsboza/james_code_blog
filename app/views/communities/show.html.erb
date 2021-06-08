@@ -1,0 +1,9 @@
+  <div style="float:right">
+   <%= link_to "Create new post", new_community_post_path(@community), class: "btn btn-outline-primary"%>
+  </div>
+
+<%= @community.name %>
+
+<%= @community.url %>
+
+<%= simple_format @community.rules %>
