@@ -1,15 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 pt-3 pb-3 mb-4" style="border-bottom: 1px solid;">
+    <div class="col-12 pt-3 pb-3">
       <div style="float:right">
         <% if account_signed_in? %>
-          <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class:"btn btn-primary" %>
+          <div class="dropdown">
+            <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_account.full_name%>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <%= link_to "Profile", profile_path(current_account.user_name), class:"dropdown-item" %>
+              <%= link_to "Settings", edit_account_registration_path, class:"dropdown-item" %>
+              <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class:"dropdown-item" %>
+            </div>
+          </div>
         <% else %>
           <%= link_to "Log In", new_account_session_path, class:"btn btn-outline-primary" %>
           <%= link_to "Sign In", new_account_registration_path, class:"btn btn-primary" %>
         <% end %>
       </div>
-      <p class="h3"><%= link_to "James Code Blog", root_path %></p>
+      <p class="h4"><%= link_to "James Code Blog", root_path %></p>
     </div>
   </div>
 </div>
