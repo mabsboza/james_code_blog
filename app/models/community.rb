@@ -5,6 +5,7 @@
 #  id             :bigint           not null, primary key
 #  name           :string
 #  rules          :text
+#  summary        :string
 #  total_memebers :integer
 #  url            :string
 #  created_at     :datetime         not null
@@ -17,9 +18,9 @@
 #
 class Community < ApplicationRecord
   belongs_to :account
+  validates_presence_of :name, :url, :rules
   has_many :posts
   has_many :subscriptions
-  has_many :subscribers, through: :subscriptions, source: :accounts
+  has_many :subscribers, through: :subscriptions, source: :account
 
-  validates_presence_of :name, :url, :rules
 end
