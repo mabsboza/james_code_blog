@@ -5,6 +5,9 @@
     <div class="col-sm-4">
         <p class="h4"><%= @profile.full_name %></p>
         <p><%= @profile.user_name %></p>
+         <% if account_signed_in? %>
+            <p> karma: <%= @profile.karma %> <span class="fa fa-star text-warning"></span></p>
+        <% end %>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <p>Cake day: <%= @profile.created_at.strftime("%d/%M/%Y")%></p>
     </div>

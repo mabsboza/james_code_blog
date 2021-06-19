@@ -7,7 +7,6 @@
             <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               <%= current_account.full_name%>
             </a>
-
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <%= link_to "Profile", profile_path(current_account.user_name), class:"dropdown-item" %>
               <%= link_to "Settings", edit_account_registration_path, class:"dropdown-item" %>
@@ -19,6 +18,12 @@
           <%= link_to "Sign In", new_account_registration_path, class:"btn btn-primary" %>
         <% end %>
       </div>
+      <% if account_signed_in? %>
+        <div class="karma mt-2" style="float: right">
+          <span class="fa fa-star text-warning"></span>
+          <%= current_account&.karma %>
+        </div>
+      <% end %>
       <p class="h4"><%= link_to "Let's drink a coffee", root_path %></p>
     </div>
   </div>

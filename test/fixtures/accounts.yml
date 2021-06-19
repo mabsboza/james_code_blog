@@ -7,6 +7,7 @@
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  first_name             :string
+#  karma                  :integer          default(0)
 #  last_name              :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
