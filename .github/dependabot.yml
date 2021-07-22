@@ -8,16 +8,22 @@ updates:
 
   - package-ecosystem: bundler
     directory: "/"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     schedule:
       interval: weekly
       time: "09:00"
       timezone: "UTC"
+    allowed_updates:
+      - match:
+          update_type: "security"
 
   - package-ecosystem: npm
     directory: "/"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     schedule:
       interval: weekly
       time: "09:00"
       timezone: "UTC"
+    allowed_updates:
+      - match:
+          update_type: "security"
