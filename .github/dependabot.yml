@@ -4,20 +4,11 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates:
+update_configs:
 
-  - package-ecosystem: bundler
+  - package_manager: bundler
     directory: "/"
-    open-pull-requests-limit: 0
-    schedule:
-      interval: weekly
-      time: "09:00"
-      timezone: "UTC"
-
-  - package-ecosystem: npm
-    directory: "/"
-    open-pull-requests-limit: 0
-    schedule:
-      interval: weekly
-      time: "09:00"
-      timezone: "UTC"
+    update_schedule: weekly
+    allowed_updates:
+      - match:
+          update_type: "security"
