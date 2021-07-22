@@ -4,7 +4,7 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-update_configs:
+updates:
 
   - package-ecosystem: bundler
     directory: "/"
@@ -13,9 +13,6 @@ update_configs:
       interval: weekly
       time: "09:00"
       timezone: "UTC"
-    allowed_updates:
-      - match:
-          update_type: "security"
 
   - package-ecosystem: npm
     directory: "/"
@@ -24,6 +21,3 @@ update_configs:
       interval: weekly
       time: "09:00"
       timezone: "UTC"
-    allowed_updates:
-      - match:
-          update_type: "security"
